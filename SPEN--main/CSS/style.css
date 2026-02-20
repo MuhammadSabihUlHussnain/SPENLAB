@@ -1,0 +1,784 @@
+/* =========================================================
+   SPEN Lab - Clean Stylesheet (Restored)
+========================================================= */
+
+:root {
+  --bg: #fff2be;
+  --surface: #f5f0dc;
+  --border: #cfc4a8;
+  --text: #2a2a2a;
+  --text-soft: #4d4d4d;
+  --dark: #0f0f0f;
+  --white: #ffffff;
+  --accent: #a28d5f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+p, li { margin-bottom: 0.75rem; }
+
+h1, h2, h3, h4, h5, h6,
+.headline,
+.sub-headline {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.75rem 1rem 2rem;
+}
+
+/* ---------------- Header + Nav ---------------- */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 92px;
+  padding: 0.35rem 1rem;
+  background: transparent;
+}
+
+.header-left,
+.header-right {
+  flex: 0 0 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-center {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-logo,
+.right-logo,
+.college-logo {
+  display: block;
+  width: auto;
+  height: 220px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.left-logo {
+  height: 220px;
+}
+
+.nav-toggle {
+  display: none;
+  border: 0;
+  background: #efe8d8;
+  color: #121212;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.nav-bar-bg { background: transparent; }
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#navbar a {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.58);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+#navbar a.active { text-decoration: underline; }
+
+/* ---------------- Shared Surfaces ---------------- */
+.info-card,
+.course-card,
+.team-card,
+.director-profile,
+.supervisor-hero,
+.tab-content.active,
+.update-item,
+.thanks-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.info-card,
+.course-card,
+.update-item,
+.tab-content.active,
+.supervisor-hero,
+.thanks-card {
+  padding: 1rem;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.page-title h1,
+.page-title h2 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+}
+
+/* ---------------- Hero Pattern ---------------- */
+.mockup-hero,
+.updates-hero,
+.research-hero-banner,
+.teaching-hero-banner,
+.service-hero-banner,
+.team-hero-banner,
+.thanks-hero-banner,
+.supervisors-hero-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  margin: 0;
+}
+
+.hero-background-image,
+.updates-hero-bg,
+.research-hero-bg,
+.teaching-hero-bg,
+.service-hero-bg,
+.team-hero-bg,
+.thanks-hero-bg,
+.supervisors-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay,
+.updates-hero-overlay,
+.research-hero-overlay,
+.teaching-hero-overlay,
+.service-hero-overlay,
+.team-hero-overlay,
+.thanks-hero-overlay,
+.supervisors-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.hero-content,
+.updates-hero-content,
+.research-hero-content,
+.teaching-hero-content,
+.service-hero-content,
+.team-hero-content,
+.thanks-hero-content,
+.supervisors-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 8.7rem 1rem 1.8rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.headline,
+.hero-content h1,
+.updates-hero-content h1,
+.research-hero-content h1,
+.teaching-hero-content h1,
+.service-hero-content h1,
+.team-hero-content h1,
+.thanks-hero-content h1,
+.supervisors-hero-content h1 {
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 0.45rem;
+}
+
+.sub-headline,
+.hero-content p,
+.updates-hero-content p,
+.research-hero-content p,
+.teaching-hero-content p,
+.service-hero-content p,
+.team-hero-content p,
+.thanks-hero-content p,
+.supervisors-hero-content p {
+  font-size: clamp(1rem, 2.1vw, 1.45rem);
+  line-height: 1.3;
+}
+
+/* ---------------- Buttons + Form ---------------- */
+.cta-button,
+.submit-button {
+  display: inline-block;
+  border: 1px solid #111;
+  background: #fff;
+  color: #111;
+  padding: 0.65rem 1.35rem;
+  border-radius: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.form-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group {
+  flex: 1;
+  margin-bottom: 0.9rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+/* ---------------- Page Scopes ---------------- */
+.home-page .home-main,
+.updates-page .updates-main,
+.research-page main,
+.teaching-page main,
+.service-page main,
+.team-page main,
+.supervisors-page main,
+.thanks-page main {
+  max-width: 1120px;
+}
+
+.home-page .about-split {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.home-page .about-media img { width: 100%; }
+
+.home-page .supervisor-panel {
+  padding: 1.2rem 0;
+  border-top: 1px solid #c9c0b1;
+  border-bottom: 1px solid #c9c0b1;
+}
+
+.home-page .supervisor-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1rem;
+}
+
+.home-page .usm-heading {
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  margin-bottom: 0.4rem;
+}
+
+.updates-page .updates-timeline {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.update-item { border-left: 5px solid var(--accent); }
+.update-item h3 { margin-bottom: 0.3rem; }
+
+.interests-grid,
+.course-grid,
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.interests-card {
+  background: #101010;
+  color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.interests-card h3 {
+  color: #ffd100;
+  margin-bottom: 0.45rem;
+}
+
+.interests-card ul,
+.course-card ul {
+  margin-left: 1.05rem;
+}
+
+.interests-card.animate { animation: fadeInUp 0.35s ease; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-list {
+  list-style: none;
+  display: flex;
+  gap: 0.45rem;
+  margin: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-link {
+  background: #ece8de;
+  border: 1px solid var(--border);
+  border-bottom: 0;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+}
+
+.tab-link.active { background: var(--surface); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.director-profile {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.director-image img {
+  width: 200px;
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.director-links,
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.profile-info { overflow: hidden; }
+
+.team-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.supervisor-hero {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.supervisor-hero .professor-photo-large {
+  max-width: 220px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.meeting-scheduler {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.6rem 1rem;
+}
+
+.book-meeting-cta {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem 1.6rem;
+  text-align: center;
+}
+
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.icon-strip { display: none !important; }
+
+/* Specific fixes requested */
+.home-page .hero-buttons { margin-top: 1.2rem; }
+
+.teaching-page .course-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.teaching-page .course-card .course-icon {
+  display: block;
+  width: 100%;
+  height: 220px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.teaching-page .course-card .course-content { flex: 1 1 auto; }
+
+.research-page .interests-card {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.research-page .interests-card h3 { color: var(--text); }
+
+.team-page .team-cards {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 320px));
+  justify-content: center;
+}
+
+.team-page .team-card {
+  width: 320px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 980px) {
+  .home-page .about-split,
+  .home-page .supervisor-grid,
+  .supervisor-hero,
+  .director-profile {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    min-height: 68px;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .left-logo,
+  .right-logo,
+  .college-logo {
+    height: 72px;
+  }
+
+  .header-left,
+  .header-right { flex: 0 0 auto; }
+
+  .header-center {
+    justify-content: flex-start;
+    margin-top: 0.3rem;
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #navbar { width: 100%; }
+
+  #navbar ul {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    right: 0;
+    background: rgba(12, 12, 12, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 6px;
+    overflow: hidden;
+    flex-direction: column;
+    gap: 0;
+    z-index: 400;
+  }
+
+  header.nav-open nav ul,
+  #navbar ul.showNav { display: flex; }
+
+  #navbar ul a {
+    display: block;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mockup-hero,
+  .updates-hero,
+  .research-hero-banner,
+  .teaching-hero-banner,
+  .service-hero-banner,
+  .team-hero-banner,
+  .thanks-hero-banner,
+  .supervisors-hero-banner {
+    min-height: 320px;
+  }
+
+  .hero-content,
+  .updates-hero-content,
+  .research-hero-content,
+  .teaching-hero-content,
+  .service-hero-content,
+  .team-hero-content,
+  .thanks-hero-content,
+  .supervisors-hero-content {
+    padding-top: 6rem;
+  }
+
+  .home-page .hero-buttons { margin-top: 1rem; }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .team-card img { height: 180px; }
+
+  .teaching-page .course-card .course-icon { height: 180px; }
+
+  .team-page .team-cards { grid-template-columns: 1fr; }
+  .team-page .team-card { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .left-logo,
+  .right-logo,
+  .college-logo {
+    height: 62px;
+  }
+}
+
+
+/* Southern Miss logo size fix */
+.header-left {
+  flex: 0 0 320px;
+}
+
+.left-logo {
+  height: 220px;
+  max-width: none;
+}
+
+@media (max-width: 768px) {
+  .header-left {
+    flex: 0 0 180px;
+  }
+
+  .left-logo {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-logo {
+    height: 96px;
+  }
+}
+
+/* Desktop header alignment + slightly larger Southern Miss logo */
+@media (min-width: 769px) {
+  header {
+    display: grid;
+    grid-template-columns: 360px 1fr 260px;
+    align-items: center;
+  }
+
+  .header-left {
+    flex: none;
+    justify-content: flex-start;
+    padding-left: 0.5rem;
+  }
+
+  .header-center {
+    justify-content: center;
+  }
+
+  .header-right {
+    flex: none;
+    justify-content: flex-end;
+    padding-right: 0.5rem;
+  }
+
+  .left-logo {
+    height: 250px;
+  }
+}
+
+/* Header top-lock alignment fix (desktop) */
+@media (min-width: 769px) {
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    min-height: 120px;
+    display: block;
+    padding: 0;
+  }
+
+  .header-left,
+  .header-center,
+  .header-right {
+    position: absolute;
+    top: 10px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .header-left {
+    left: 18px;
+    justify-content: flex-start;
+  }
+
+  .header-center {
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    width: max-content;
+  }
+
+  .header-right {
+    right: 18px;
+    justify-content: flex-end;
+  }
+
+  .left-logo {
+    height: 170px;
+    width: auto;
+    max-width: none;
+  }
+
+  .right-logo {
+    height: 115px;
+    width: auto;
+  }
+
+  #navbar ul {
+    margin: 0;
+  }
+}
+
+/* Southern Miss logo crop into top-left corner (desktop) */
+@media (min-width: 769px) {
+  .header-left {
+    width: 190px;
+    height: 86px;
+    overflow: hidden;
+    padding-left: 0;
+  }
+
+  .left-logo {
+    height: 165px;
+    width: auto;
+    transform: translate(-44px, -26px);
+    transform-origin: top left;
+  }
+}
+
+/* Slightly larger Southern Miss logo */
+@media (min-width: 769px) {
+  .left-logo {
+    height: 185px;
+  }
+}
+
+/* Tighter Southern Miss corner crop */
+@media (min-width: 769px) {
+  .header-left {
+    width: 170px;
+    height: 74px;
+    overflow: hidden;
+  }
+
+  .left-logo {
+    height: 190px;
+    transform: translate(-56px, -38px);
+  }
+}
+
+/* Uncrop Southern Miss logo (desktop) */
+@media (min-width: 769px) {
+  .header-left {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    padding-left: 0.5rem;
+  }
+
+  .left-logo {
+    transform: none;
+    transform-origin: initial;
+    max-width: 100%;
+  }
+}
+
+/* Southern Miss logo: reduce by half */
+@media (min-width: 769px) {
+  .left-logo {
+    height: 95px;
+  }
+}
